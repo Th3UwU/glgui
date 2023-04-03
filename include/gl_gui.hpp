@@ -1,3 +1,13 @@
 #pragma once
 
-void test(void);
+namespace glgui
+{
+	class gui
+	{
+	public:
+		gui();
+		~gui();
+	};
+
+
+}

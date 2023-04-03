@@ -27,6 +27,13 @@ target_include_directories(
 	$<INSTALL_INTERFACE:include>
 )
 
+target_link_libraries(glgui PRIVATE
+	fmt
+	glew32
+	glfw3
+	opengl32
+)
+
 target_compile_options(
 	glgui PRIVATE
 	-Wall -Wextra -pedantic)
@@ -34,6 +41,10 @@ target_compile_options(
 target_compile_features(
 	glgui PRIVATE
 	cxx_std_17)
+
+target_compile_definitions(
+	glgui PRIVATE
+	GLFW_INCLUDE_NONE)
 
 set_target_properties(glgui PROPERTIES
 	CXX_EXTENSIONS OFF)
@@ -78,7 +89,8 @@ target_include_directories(
 )
 
 target_link_libraries(glgui_test PRIVATE
-	glgui)
+	glgui
+)
 
 target_compile_options(
 	glgui_test PRIVATE

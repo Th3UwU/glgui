@@ -3,8 +3,7 @@
 
 int main(void)
 {
-	test();
-	abc();
-
+	glgui::gui* gui = new glgui::gui();
+	delete gui;
 	return 0;
 }
